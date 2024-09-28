@@ -1,0 +1,766 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  padding-top: 60px; /* Ensure content starts below the navbar */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 20px; /* Increase padding for mobile screens */
+  }
+}
+
+/* Navbar */
+.navbar {
+  background-color: #005b5b;
+  padding: 10px 20px;
+  color: white;
+  position: fixed; /* Keeps the navbar fixed at the top */
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Spaces elements between left and right */
+  align-items: center; /* Vertical alignment */
+  z-index: 1001; /* Ensure navbar stays on top */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+}
+
+/* Center the h1 in the middle of the navbar */
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styling for the navigation links */
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: row; /* Keep links horizontal */
+}
+
+.nav-links li {
+  margin-left: 20px; /* Spacing between each link */
+}
+
+.icon-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #1abc9c; /* Change color on hover */
+}
+
+.icon-link i {
+  margin-right: 8px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    flex-direction: row;
+  }
+
+  /* Remove the position: absolute from the title on smaller screens */
+  .navbar h1 {
+    position: static; /* Removes the absolute positioning on mobile */
+    transform: none;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: flex; /* Ensure it's still using flexbox */
+    justify-content: center;
+    margin-top: 10px;
+    flex-direction: row; /* Keep links horizontal on mobile too */
+  }
+
+  .nav-links li {
+    margin-left: 15px;
+    margin-right: 15px; /* Ensure proper spacing between items */
+  }
+}
+.animation-container {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  height: 100vh; /* Ensures the slideshow takes the full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 100%;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100vh; /* Make the image fill the entire viewport height */
+  object-fit: cover; /* Ensure the image fills the container without distortion */
+}
+
+/* Text animations */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Arial', sans-serif;
+  z-index: 2; /* Ensure text is layered above the slideshow */
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.text h1 {
+  font-size: 48px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.text p {
+  font-size: 24px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 1s;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slideshow fade effect */
+.fade {
+  animation: fadeEffect 1.5s ease;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Container styling */
+.other-services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4; /* Light grey background */
+  padding: 20px;
+  text-align: center;
+  animation: fadeInContainer 2s ease-in-out;
+}
+
+/* Heading styling */
+.other-services-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0056b3; /* Rich blue color */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Uppercase for emphasis */
+  animation: fadeInText 1.5s ease-in-out forwards;
+}
+
+/* Text styling */
+/* Container styling remains the same */
+.other-services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  animation: fadeInContainer 2s ease-in-out;
+}
+
+/* Heading styling remains the same */
+.other-services-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #005b5b;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeInText 1.5s ease-in-out forwards;
+}
+
+/* Text styling remains the same */
+.other-services-text {
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  max-width: 800px;
+  line-height: 1.6;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeInText 2s ease-in-out forwards;
+}
+
+/* Button link styling */
+.contact-button-link {
+  margin-top: 20px; /* Add space between the text and button */
+  text-decoration: none; /* Remove underline from the anchor tag */
+}
+
+/* Button styling */
+.contact-button {
+  background-color: #005b5b; /* Matching blue button */
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.contact-button:hover {
+  background-color: #005b5b; /* Darken blue on hover */
+  transform: translateY(-3px); /* Slight upward movement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Fade-in animations */
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Product Cards Section */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('https://cdn.pixabay.com/photo/2015/08/25/11/50/shopping-mall-906721_1280.jpg') center/cover no-repeat;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 0 10px 10px;
+}
+
+/* Profile Cards Section */
+.profile-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 33.33vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.profile-card:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.profile-card:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.profile-card h3 {
+  font-size: 20px;
+  color: #777;
+  margin: 10px 0;
+}
+
+.profile-card p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+/* Contact Hero Section */
+.contact-hero {
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/05/00/12/girl-2581913_960_720.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.contact-hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* To improve text readability */
+}
+
+.contact-hero p {
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* To improve text readability */
+}
+
+.contact-hero .hero-email {
+  color: #1abc9c;
+  text-decoration: underline;
+}
+
+.contact-hero .hero-email:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Fade-In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 70px 20px;
+  }
+
+  .contact-hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+  }
+}
+
+/* Contact Icons Section */
+.contact-icons-border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  padding: 100px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+.contact-item {
+  margin: 20px 0;
+}
+
+.contact-icon-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icon-link:hover {
+  color: #00aaff;
+  transform: scale(1.1);
+}
+
+.contact-icon-link i {
+  font-size: 30px;
+}
+
+/* Fade-In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+  }
+
+  .contact-icons-border {
+    padding: 50px 20px;
+  }
+
+  .contact-icon-link {
+    font-size: 20px;
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon-link {
+    font-size: 16px;
+  }
+
+  .contact-icon-link {
+    font-size: 20px;
+  }
+}
+
+/* Watches Section */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* General Section Styling */
+.watches-section {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+}
+
+.watches-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Watch Item Styling */
+.watch-item {
+  display: flex;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+}
+
+.watch-item img {
+  max-width: 150px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.watch-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.watch-item h3 {
+  font-size: 1.5rem;
+  color: #005b5b;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.watch-item p {
+  font-size: 1rem;
+  color: #666;
+}
+/* Footer Styling */
+.footer-container {
+  background-color: #005b5b; /* Matches your navbar color */
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  z-index: 1000; /* Ensure it's on top of other elements */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a polished look */
+}
+
+.footer-container p {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.footer-container .social-links {
+  margin-top: 10px;
+}
+
+.footer-container .social-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-container .social-links a:hover {
+  color: #1abc9c; /* Accent color on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 15px 0;
+  }
+
+  .footer-container p {
+    font-size: 14px;
+  }
+
+  .footer-container .social-links a {
+    font-size: 22px;
+  }
+}
+/* Return & Refund Container */
+.return-refund-container {
+  background-color: #f4f4f9;  /* Light grayish background */
+  border: 1px solid #e0e0e0;  /* Border for the container */
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+/* Heading Style */
+.return-refund-container h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInDown 1.8s ease-in-out forwards;
+}
+
+/* Subheading Style */
+.return-refund-container h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #0073e6; /* Bright blue color */
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Paragraph Style */
+.return-refund-container p {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* List Style */
+.refund-list {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #555;
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 2.2s ease-in-out forwards;
+  animation-delay: 0.7s;
+}
+
+/* Final Paragraph Style */
+.refund-info {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInUp 2.4s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for fadeInDown animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .return-refund-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .return-refund-container h2 {
+    font-size: 28px;
+  }
+
+  .return-refund-container h3 {
+    font-size: 22px;
+  }
+
+  .return-refund-container p,
+  .refund-list {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
